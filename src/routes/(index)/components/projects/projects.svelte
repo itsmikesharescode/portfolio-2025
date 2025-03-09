@@ -1,5 +1,4 @@
 <script lang="ts" module>
-	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import Button from '$lib/components/ui/button/button.svelte';
 	import { Separator } from '$lib/components/ui/separator/index.js';
 	import { projects } from '$lib/index';
@@ -24,10 +23,7 @@
 	<section class="grid gap-4 md:grid-cols-2">
 		{#each projects as project}
 			<div class="flex flex-col gap-4" id={project.slug}>
-				<Avatar.Root class="h-[320px] w-full rounded-lg">
-					<Avatar.Image src={project.links.image} alt={project.title} />
-					<Avatar.Fallback>{project.title.slice(0, 2)}</Avatar.Fallback>
-				</Avatar.Root>
+				<img src={project.links.image} alt={project.title} class="aspect-video rounded-lg" />
 
 				<h2 class="text-2xl font-semibold">{project.title}</h2>
 				<p class="line-clamp-5 text-base text-muted-foreground md:min-h-[130px]">
